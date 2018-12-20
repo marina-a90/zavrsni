@@ -39,7 +39,7 @@ h5,
 h6,
 .h6 {
     color: #b34848 !important;
-    /* zamenjena boja naslova */
+    
 }
 
 .blog-masthead {
@@ -50,4 +50,8 @@ h6,
     color: #b34848;
     text-decoration: underline !important;
     text-decoration-color:  #b34848;
+}
+
+#hiddenDelete {
+    display: none;
 }

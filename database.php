@@ -2,6 +2,7 @@
 
 $host = "localhost";
 $user = "root";
+// $password = "vivify";
 $password = "";
 $dbname = "blog";
 
@@ -34,5 +35,9 @@ function query($sql, $connection) {
     return $statement->fetch();
 }
 
+function insertOrDelete($sql, $connection) {
+    $statement = $connection->prepare($sql);
+    $statement->execute();
+}
 
 ?>

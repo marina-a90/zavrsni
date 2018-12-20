@@ -1,12 +1,8 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-<?php 
-
-include_once("header.php");
-include_once("posts.php");
-
-?>
-
-
+include_once("header.php"); ?>
 
 <!doctype html>
 <html lang="en">
@@ -36,6 +32,8 @@ include_once("posts.php");
 
         <div class="col-sm-8 blog-main"> 
 
+        <?php include_once("posts.php"); ?>
+
             <nav class="blog-pagination">
                 <a class="btn btn-outline-primary" href="#">Older</a>
                 <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
@@ -43,7 +41,10 @@ include_once("posts.php");
 
         </div><!-- /.blog-main -->
 
+
     </div><!-- /.row -->
+
+
 
 </main><!-- /.container -->
 

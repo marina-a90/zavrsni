@@ -14,7 +14,7 @@ include_once("sidebar.php");
 
     foreach ($posts as $post) { 
         ?>
-        <h2 class="blog-post-title"> <a href ='single-post.php?id=<?php echo $post['id'];?>' > <?php echo $post['title'];?> </a></h2>
+        <h2 class="blog-post-title"> <a href ="single-post.php?id=<?php echo $post["id"];?>" > <?php echo $post["title"];?> </a></h2>
 
         <p class="blog-post-meta"> <?php echo $post["created_at"]; ?> by 
         <!-- dodati link za autora posle -->
@@ -27,12 +27,9 @@ include_once("sidebar.php");
         <hr>
 <?php
     }
-?>
+
+?> 
 
 </div><!-- /.blog-post -->
 
-<?php
-
-include_once("footer.php");
-
-?>
+<?php include_once("footer.php"); ?>
