@@ -30,7 +30,13 @@
     // echo $postID;
 
     if (isset($_GET["id"])) { 
-        $sqlSinglePost = "SELECT * FROM posts WHERE posts.id = $postID";
+        $sqlSinglePost = 
+        "SELECT posts.id, title, body, user_id as author, created_at, first_name, last_name 
+        FROM posts 
+        INNER JOIN users ON 
+        posts.user_id = users.id 
+        WHERE posts.id = $postID
+        ORDER BY created_at DESC";
         $singlePost = query($sqlSinglePost, $connection);
 
 ?>
@@ -43,7 +49,7 @@
     <div class="col-sm-8 blog-main" class = "wrap">
             <h2 class="blog-post-title"><?php echo ($singlePost["title"]) ?></h2>
             <p class="blog-post-meta">
-                <?php echo $singlePost["created_at"] . " by " . $singlePost["author"]; ?>
+                <?php echo $singlePost["created_at"] . " by " . $singlePost["first_name"] . " " . $singlePost["last_name"]; ?>
                 <a href="#"></a></p>
             <p class = "justify"><?php echo nl2br($singlePost["body"]); ?></p>
             <hr>
@@ -56,7 +62,7 @@
             <script>
                 function reallyDeletePost() {
                     return confirm("Are you sure you want to delete this post?");
-            }
+                }
             </script>
 
             </form> 

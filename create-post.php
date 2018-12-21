@@ -4,8 +4,8 @@
     include_once("database.php");
 
 
-    if (!empty($_POST['author'])) {
-        $author = $_POST['author'];
+    if (!empty($_SESSION['id'])) {
+        $author = $_SESSION['id'];
     }
 
     if (!empty($_POST['title'])) {
@@ -20,7 +20,7 @@
     if ($_SERVER['REQUEST_METHOD'] === "POST") { 
         if (!empty($title) && !empty($post) && !empty($author)) {
             
-            $sqlCreatePost = "INSERT INTO posts (title, body, author) VALUES ('$title', '$post', '$author')";   
+            $sqlCreatePost = "INSERT INTO posts (title, body, user_id) VALUES ('$title', '$post', '$author')";   
             insertOrDelete($sqlCreatePost, $connection);
 
             header("Location: index.php");

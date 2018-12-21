@@ -1,3 +1,11 @@
+<?php 
+
+if(!isset($_SESSION['id'])) {
+    header("Location: login.php");
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -26,10 +34,6 @@
             <div class="col-sm-8 blog-main">
 
                 <form id = "addPosts" onsubmit = "return validatePost()" method = "POST">
-                    
-                    <label for = "author"><b>Your name:</b></label><br>    
-                    <input name="author" id = "formAuthor" type="text" placeholder="Your Name"> 
-                    <br><br>
 
                     <label for = "title"><b>Post title:</b></label><br>   
                     <input name="title" type="text" placeholder="Post Title"/> 
@@ -45,17 +49,10 @@
 
                     <script>
                         function validatePost() {
-                            var author = document.forms["addPosts"]["author"].value; 
                             var title = document.forms["addPosts"]["title"].value;
                             var post = document.forms["addPosts"]["post"].value;
-                            if (author === "" || title === "" || post === "") {
+                            if (title === "" || post === "") {
                                     document.getElementById("alertTagPost").style.display = "block";
-                                    if (author === "") {
-                                        document.forms["addPosts"]["author"].classList.add("alert-danger");
-                                    }
-                                    else {
-                                        document.forms["addPosts"]["author"].classList.remove("alert-danger");
-                                    }
                                     if (title === "") {
                                         document.forms["addPosts"]["title"].classList.add("alert-danger");
                                     }

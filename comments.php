@@ -1,3 +1,5 @@
+<?php include_once("delete-comment.php"); ?>
+
 <br><br>
 <h4><b>Comments</b></h4>
 
@@ -27,8 +29,9 @@ ovo posle prebaciti u main.js -->
 
     <?php
 
-        $sqlComments = "SELECT comments.text, comments.author, comments.id FROM comments 
+        $sqlComments = "SELECT text, author, comments.id FROM comments 
         INNER JOIN posts ON comments.post_id = posts.id WHERE posts.id = {$_GET["id"]}";
+ 
         $comments = queryAll($sqlComments, $connection);
 
     

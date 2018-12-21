@@ -63,3 +63,8 @@ h6,
 .wrap {
     word-wrap: break-word;
 }
+
+.headerFlex {
+    display: flex;
+    justify-content:space-between;
+}

@@ -2,6 +2,7 @@
     
     include_once("database.php");
 
+
     if (!empty($_POST["commentId"])) {
         $commentId = $_POST["commentId"];
 
