@@ -22,7 +22,6 @@
             insertOrDelete($sqlCommentsInsert, $connection);
 
             header("Location: single-post.php?id=" . $postID);
-
         }
 
     }

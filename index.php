@@ -43,7 +43,7 @@
 
             <div class="row">
 
-                <div class="col-sm-8 blog-main">
+                <div class="col-sm-8 blog-main" class = "wrap">
 
                     <?php 
                         include_once("posts.php");

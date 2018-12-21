@@ -24,7 +24,6 @@
             insertOrDelete($sqlCreatePost, $connection);
 
             header("Location: index.php");
-            // ********************************
         }
 
     }

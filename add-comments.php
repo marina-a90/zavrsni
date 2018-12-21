@@ -6,7 +6,7 @@
         <br><br> 
 
         <label for = "comment"><b>Commment:</b></label><br>
-        <textarea name="comment" rows="10" columns="30" placeholder="Enter your comment"></textarea> 
+        <textarea name="comment" rows="10" columns="300" style="width: 300px; height: 150px;" placeholder="Enter your comment"></textarea> 
         <br><br>
 
         <p id = "alertTagComment" class = "alert alert-danger" style = "display:none">All fileds must be filed in</p>

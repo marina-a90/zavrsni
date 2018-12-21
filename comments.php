@@ -1,13 +1,7 @@
-<?php 
-    include_once("database.php"); 
-    include_once("create-comment.php");
-    include_once("delete-comment.php"); 
-?>
-
 <br><br>
 <h4><b>Comments</b></h4>
 
-<button id = "ShowHideButton" class = ".btn .btn-default" style = "display:none" onclick="showHideButton()">Hide Comments</button>
+<button id = "ShowHideButton" class = "btn btn-default" style = "display:none" onclick="showHideButton()">Hide Comments</button>
 <br><br>
 
 <!-- ***********************
@@ -40,7 +34,7 @@ ovo posle prebaciti u main.js -->
     
         foreach ($comments as $comment) {
         ?>
-            <li id = "singleComment">
+            <li id = "singleComment" class = "wrap">
                 <?php echo $comment["author"] . ": <br>" . $comment["text"] . "<br>" ; ?>
                 
                 <form name = "deleteComment" method = "POST">

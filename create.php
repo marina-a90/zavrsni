@@ -36,7 +36,7 @@
                     <br><br>
 
                     <label for = "post"><b>Post text:</b></label><br>   
-                    <textarea name="post" rows="10" columns="100" placeholder="Post Text"></textarea> 
+                    <textarea name="post" rows="10" columns="100" style="width: 500px; height: 250px;" placeholder="Post Text"></textarea> 
                     <br><br>
 
                     <p id = "alertTagPost" class = "alert alert-danger" style = "display:none"> All fileds must be filed in </p>

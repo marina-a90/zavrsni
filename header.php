@@ -2,8 +2,19 @@
     <div class="blog-masthead">
         <div class="container">
             <nav class="nav">
-                <a class="nav-link active" href="index.php">Home</a>
-                <a class="nav-link" href="create-post.php">Create</a>
+
+                <?php if (preg_match("/index.php/i", $_SERVER["SCRIPT_NAME"])) { ?>
+                    <a href="index.php" class="nav-link active">Home</a>
+                <?php } else { ?>
+                    <a href="index.php" class="nav-link">Home</a>
+                <?php } ?>
+
+                <?php if (preg_match("/create-post.php/i", $_SERVER["SCRIPT_NAME"])) { ?>
+                    <a href="create-post.php" class="nav-link active">Create</a>
+                <?php } else { ?>
+                    <a href="create-post.php" class="nav-link">Create</a>
+                <?php } ?>
+
             </nav>
         </div>
     </div>

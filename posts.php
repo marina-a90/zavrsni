@@ -16,7 +16,7 @@
         <!-- </a> -->
         </p>
 
-        <p> <?php echo $post["body"] ?> </p>
+        <p class = "justify"> <?php echo nl2br($post["body"]); ?> </p>
         <hr>
 <?php
     }

@@ -1,7 +1,7 @@
 <?php include_once("database.php"); ?>
 
 <aside class="col-sm-3 ml-sm-auto blog-sidebar">
-            <div class="sidebar-module sidebar-module-inset">
+            <div class="sidebar-module sidebar-module-inset" style = " word-wrap: break-word ">
                 
                 <h4>Latest Posts</h4>
                 

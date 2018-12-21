@@ -40,12 +40,12 @@
 
 
     <div class="row">
-    <div class="col-sm-8 blog-main">
+    <div class="col-sm-8 blog-main" class = "wrap">
             <h2 class="blog-post-title"><?php echo ($singlePost["title"]) ?></h2>
             <p class="blog-post-meta">
                 <?php echo $singlePost["created_at"] . " by " . $singlePost["author"]; ?>
                 <a href="#"></a></p>
-            <p><?php echo ($singlePost["body"]) ?></p>
+            <p class = "justify"><?php echo nl2br($singlePost["body"]); ?></p>
             <hr>
 
 
@@ -71,6 +71,7 @@
     include_once("delete-post.php");
     include_once("add-comments.php");
     include_once("comments.php");
+
     ?>
 
     </main>
