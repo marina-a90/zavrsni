@@ -1,15 +1,17 @@
 <?php 
 
-include_once("database.php");
+    include_once("database.php"); 
 
-if (!empty($_POST["postId"])) {
-    $postId = $_POST["postId"];
+    if (!empty($_POST["postId"])) {
+        $postId = $_POST["postId"];
 
-    $sqlDeletePost = "DELETE FROM posts WHERE id = $postId";
-    $deletePost = insert($sqlDeletePost, $connection);
+        $sqlDeletePostComments = "DELETE FROM comments WHERE post_id = $postID";
+        $deletePostComments = insertOrDelete($sqlDeletePostComments, $connection);
 
-    header("Location: index.php");
-}
+        $sqlDeletePost = "DELETE FROM posts WHERE id = $postId";
+        $deletePost = insertOrDelete($sqlDeletePost, $connection);
 
+        header("Location: index.php");
+    }
 
 ?>

@@ -1,43 +1,44 @@
 <?php 
 
-$host = "localhost";
-$user = "root";
-// $password = "vivify";
-$password = "";
-$dbname = "blog";
+    // ************** Please update database information to match your PC settings **************
+    $host = "localhost";
+    $user = "root";
+    // $password = "vivify";
+    $password = "";
+    $dbname = "blog";
 
-$dsn = "mysql:host=$host;dbname=$dbname";
+    $dsn = "mysql:host=$host;dbname=$dbname";
 
-try {
-    $connection = new PDO($dsn, $user, $password);
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $exception) {
-    echo $exception->getMessage();
-}
+    try {
+        $connection = new PDO($dsn, $user, $password);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch (PDOException $exception) {
+        echo $exception->getMessage();
+    }
 
 
-// functions: 
+    // functions: 
 
-function queryAll($sql, $connection) {
+    function queryAll($sql, $connection) {
 
-    $statement = $connection->prepare($sql);
-    $statement->execute();
-    $statement->setFetchMode(PDO::FETCH_ASSOC);
-    return $statement->fetchAll();
-}
+        $statement = $connection->prepare($sql);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        return $statement->fetchAll();
+    }
 
-function query($sql, $connection) {
+    function query($sql, $connection) {
 
-    $statement = $connection->prepare($sql);
-    $statement->execute();
-    $statement->setFetchMode(PDO::FETCH_ASSOC);
-    return $statement->fetch();
-}
+        $statement = $connection->prepare($sql);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        return $statement->fetch();
+    }
 
-function insertOrDelete($sql, $connection) {
-    $statement = $connection->prepare($sql);
-    $statement->execute();
-}
+    function insertOrDelete($sql, $connection) {
+        $statement = $connection->prepare($sql);
+        $statement->execute();
+    }
 
 ?>

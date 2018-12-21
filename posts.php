@@ -1,15 +1,8 @@
 <?php 
 
-include_once("database.php");
-include_once("header.php");
-include_once("sidebar.php");
+    include_once("database.php"); 
 
-?>
-
-<div class="blog-post">
-
-<?php 
-    $sqlPosts = "SELECT id, title, body, author, created_at FROM posts ORDER BY created_at DESC LIMIT 3";
+    $sqlPosts = "SELECT id, title, body, author, created_at FROM posts ORDER BY created_at DESC LIMIT 10";
     $posts = queryAll($sqlPosts, $connection);
 
     foreach ($posts as $post) { 
@@ -27,9 +20,4 @@ include_once("sidebar.php");
         <hr>
 <?php
     }
-
-?> 
-
-</div><!-- /.blog-post -->
-
-<?php include_once("footer.php"); ?>
+?>

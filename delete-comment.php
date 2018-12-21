@@ -1,13 +1,12 @@
 <?php 
+    
+    include_once("database.php");
 
-include_once("database.php");
+    if (!empty($_POST["commentId"])) {
+        $commentId = $_POST["commentId"];
 
-if (!empty($_POST["commentId"])) {
-    $commentId = $_POST["commentId"];
-
-    $sqlDeleteComment = "DELETE FROM comments WHERE id = $commentId";
-    $deleteComment = insert($sqlDeleteComment, $connection);
-}
-
+        $sqlDeleteComment = "DELETE FROM comments WHERE id = $commentId";
+        $deleteComment = insertOrDelete($sqlDeleteComment, $connection);
+    }
 
 ?>
